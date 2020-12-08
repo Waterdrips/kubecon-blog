@@ -77,3 +77,4 @@ faas-cli deploy -f kubecon-multi-arch-blog.yml
 https://www.openfaas.com/blog/serverless-static-sites/
 ```
  
+ 

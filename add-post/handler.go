@@ -100,13 +100,15 @@ func clonePush(title string, body string) error {
 	token := strings.TrimSpace(string(tokenBytes))
 	r, err := git.PlainClone(tmpPath, false, &git.CloneOptions{
 		Auth: &ghttp.BasicAuth{
-			Username: "alexellis",
+			Username: "Waterdrips",
 			Password: token,
 		},
 		URL: os.Getenv("GITHUB_REPO"),
 	})
 
 	if err != nil {
+		fmt.Println(fmt.Sprintf("unable to clone: %s", os.Getenv("GITHUB_REPO")))
+		println()
 		return errors.Wrapf(err, "unable to clone: %s", os.Getenv("GITHUB_REPO"))
 	}
 	w, err := r.Worktree()
@@ -162,7 +164,7 @@ draft: false
 
 	err = r.Push(&git.PushOptions{
 		Auth: &ghttp.BasicAuth{
-			Username: "alexellis",
+			Username: "Waterdrips",
 			Password: token,
 		},
 	})

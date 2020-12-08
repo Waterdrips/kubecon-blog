@@ -9,12 +9,11 @@ functions:
     handler: ./add-post
     image: alexellis2/add-post:0.1.0
     environment:
-      GITHUB_REPO: https://github.com/Waterdrip/kubecon-blog
+      GITHUB_REPO: https://github.com/Waterdrips/kubecon-blog
     build_args:
       GO111MODULE: on
     secrets:
       - github-token
-      - admin-token
   blog:
     lang: hugo
     handler: ./blog
