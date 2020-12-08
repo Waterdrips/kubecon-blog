@@ -14,6 +14,7 @@ faas-cli secret create github-token --from-literal $GITHUB_TOKEN
 faas-cli deploy
 ```
 
+
 Then go ahead and configure your GitHub Actions as per main.yml, creating secrets for:
 
 * OPENFAAS_GATEWAY
