@@ -76,3 +76,4 @@ faas-cli deploy -f kubecon-multi-arch-blog.yml
 # Let's Thank Matias for his awesome blog post! Made our lives so much easy!
 https://www.openfaas.com/blog/serverless-static-sites/
 ```
+ 
