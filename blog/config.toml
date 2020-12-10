@@ -1,4 +1,4 @@
-baseURL = "/function/blog/"
+baseURL = "/blog/"
 languageCode = "en-us"
-title = "Alex's blog"
+title = "Alistair's blog"
 theme = "ananke"
