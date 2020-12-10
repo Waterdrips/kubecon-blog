@@ -21,6 +21,7 @@ import (
 )
 
 func Handle(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("content-type", "text/plain")
 
 	passwordBytes, err := ioutil.ReadFile("/var/openfaas/secrets/admin-token")
 	if err != nil {
