@@ -21,7 +21,6 @@ import (
 )
 
 func Handle(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("content-type", "text/plain")
 
 	passwordBytes, err := ioutil.ReadFile("/var/openfaas/secrets/admin-token")
 	if err != nil {
@@ -52,6 +51,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 
 	log.Println(string(input), r.Header, r.Method, r.URL.Path, r.Form)
 	if r.Method == http.MethodPost {
+		w.Header().Set("content-type", "text/plain")
 		parts, err := url.ParseQuery(string(input))
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
@@ -77,6 +77,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 
 	res, err := ioutil.ReadFile("./templates/index.html")
 	if err != nil {
+		w.Header().Set("content-type", "text/plain")
 		w.WriteHeader(http.StatusNotFound)
 		w.Write([]byte(fmt.Sprintf("Unable to locate file: %s", err.Error())))
 		return
