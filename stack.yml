@@ -10,6 +10,7 @@ functions:
     image: add-post:0.1.0
     environment:
       GITHUB_REPO: https://github.com/Waterdrips/kubecon-blog
+      content_type: "text/plain"
     build_args:
       GO111MODULE: on
     secrets:
